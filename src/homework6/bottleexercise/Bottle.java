@@ -1,9 +1,17 @@
-package homework6;
+package homework6.bottleexercise;
+
+import homework6.personexercise.Person;
 
 public class Bottle {
     private int availableLiquid;
     private int totalCapacity;
     private boolean open;
+
+    public void otherMethod(){
+        Person person = new Person("Alex");
+        person.publicField = true;
+//        person.privateField = false; -- compile error
+    }
 
     public boolean hasMoreLiquid() {
         return availableLiquid > 0;
@@ -47,7 +55,7 @@ public class Bottle {
         return liquidToDrink + " has been drank";
     }
 
-    public String refill(int liquidToAdd) {
+    private String refill(int liquidToAdd) {
         if (liquidToAdd < 0) {
             return "Quantity to refill must be positive";
         }
@@ -57,7 +65,7 @@ public class Bottle {
 
     public String refill() {
         int addedLiquid = getEmptyCapacity();
-        refill(addedLiquid);
+        this.refill(addedLiquid);
         return "Bottle was filled with " + addedLiquid;
     }
 }
