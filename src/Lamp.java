@@ -5,6 +5,8 @@ public class Lamp {
 
     private int intensity;
 
+    private boolean addedLater;
+
     Lamp() {
         System.out.println("Starting construction of lamp");
         lightState = false;
